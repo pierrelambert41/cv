@@ -1,0 +1,38 @@
+{% extends 'default/about.html.twig' %}
+
+{% block work %}
+    <div class="container">
+        <div class="service-head text-center">
+            <h4>WHAT I DID</h4>
+            <h3>MY <span>EXPERIENCE</span></h3>
+            <span class="border one"></span>
+        </div>
+
+        <div class="time-main w3l-agile">
+            {% for experience in experiences %}
+                <div class="col-md-6 year-info">
+                    <ul class="year">
+                        <li>{{ experience.date | date('Y') }}</li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+                <ul class="col-md-6 timeline">
+                    <li>
+                        <div class="timeline-badge info"><i class="glyphicon glyphicon-briefcase"></i></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">{{ experience.title }}</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>{{ experience.content }}</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="clearfix"></div>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}
