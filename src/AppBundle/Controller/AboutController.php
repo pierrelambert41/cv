@@ -27,7 +27,7 @@ class AboutController extends Controller
         $experiences = $em->getRepository(Experience::class)->findAll();
         return $this->render('default/work.html.twig', [
             'personals' => $personals,
-            'experiences' => $experiences,
+            'experiences' => $experiences
         ]);
     }
 
